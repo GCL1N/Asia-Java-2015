@@ -7,10 +7,10 @@ public class p1 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 System.out.println("========================") ;
-System.out.println("¡¹©m¦W : ªL®m¥K                                              ¡¹") ;
-System.out.println("¡¹¨t©Ò : ¨È¬w¤j¾Ç¸ê°T¤uµ{¾Ç¨t               ¡¹") ;
-System.out.println("¡¹¨­¤À : ¸ê¹qªı1A¾Ç¥Í                               ¡¹") ;
-System.out.println("¡¹¹q¸Ü : 09*******       ¡¹") ;
+System.out.println("â˜…å§“å : æ—å³»ä»•                                              â˜…") ;
+System.out.println("â˜…ç³»æ‰€ : äºæ´²å¤§å­¸è³‡è¨Šå·¥ç¨‹å­¸ç³»               â˜…") ;
+System.out.println("â˜…èº«åˆ† : è³‡é›»çµ„1Aå­¸ç”Ÿ                               â˜…") ;
+System.out.println("â˜…é›»è©± : 09*******       â˜…") ;
 System.out.println("========================") ;
 	}
 
