@@ -7,10 +7,10 @@ int va1 = 1 ;
 System.out.println("Hello world!"+ va1);
 String  str= fun1();
 	}
-public static  String fun1(){
-	System.out.println("Fun1");
-	return null;
-				
-	}
-
+ public static String fun1(){
+	System.out.println("fun1");
+	return "12" ;
+	
+	
+ }
 }
