@@ -7,7 +7,7 @@ public class ex7 {
 		Scanner scn = new Scanner(System.in);
 		System.out.print("請輸入 N 值 : ");
 		int n = scn.nextInt();
-		System.out.print("請輸入  M 值 :  ");
+		System.out.print("請輸入  M 值 : ");
 		int m = scn.nextInt();
 	
 		int i , j ;
