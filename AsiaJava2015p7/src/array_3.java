@@ -1,5 +1,7 @@
 //Array陣列+亂數練習_3
+import java.util.Arrays;
 import java.util.Scanner;
+
 import java.util.Random;
 public class array_3 {
 
@@ -7,13 +9,33 @@ public class array_3 {
 		// TODO Auto-generated method stub
 		Scanner scn = new Scanner(System.in);
 		Random ran = new Random();
-		int[] data = new int[10];
-		for(int i = 0 ; i < 10 ; i++){
-			data[i] = ran.nextInt(100);
-		}
-		int rit= 1,wro =1;
+	    int data[] = new int[10];
+	   for(int i=0; i < data.length; i ++){
+	     int ind = ran.nextInt();
+	     int tmp = data[ind];
+	     data[ind] = data[i];
+	     data[i] = tmp;
+	   }
 
-			for(int j = 0; j < 10 ; j++){
+	   
+            
+            
+		System.out.println("以下將隨機產生10個100以內的數字，請判斷該數是否為偶數。");
+		System.out.println("答錯三題及遊戲結束，請思考後再回答。");
+		System.out.print("按下ENTER開始。");
+		
+		try
+		{
+			 System.in.read();
+		}
+		catch(Exception e){}
+		
+		int rit= 0,wro =0;
+		for(int j = 0; j < 10 ; j++){
+			if(wro >= 3){
+				System.out.println("你輸惹 ~~ 錯超過三題惹~~");
+				return;
+			}else{
 				System.out.println(data[j]+"是否為偶數?(是/否)");
 				char ans = scn.next().charAt(0);
 				if(data[j]%2 == 0){
@@ -46,10 +68,7 @@ public class array_3 {
 					}
 				}
 			}
-		if(wro <= 3){
-			System.out.println("你贏惹~~");
-		}else{
-			System.out.println("你輸惹 ~~   " + wro+ "題錯惹");
 		}
+		System.out.println("唉呦，不錯喔。你總共答對  " + rit +" 題，答錯  "+ wro + " 題。");
 	}
 }
