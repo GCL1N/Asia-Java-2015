@@ -41,12 +41,12 @@ public class array2D_3 {
 				a[j]=Math.max(max,data[i][j]);
 			}
 		}
-		float b [] = new float[5];
-		for(int j = 0 ; j<5 ;j++){
-			for(int i=0 ; i<n ;i++){
-				b[j]=Math.min(a[j],data[i][j]);
-			}
-		}
+//		float b [] = new float[5];
+//		for(int j = 0 ; j<5 ;j++){
+//			for(int i=0 ; i<n ;i++){
+//				b[j]=Math.min(a[j],data[i][j]);
+//			}
+//		}
 		System.out.println("戈");
 		System.out.println(""+"\t"+"璣ゅ"+"\t"+"计厩"+"\t"+"礛"+"\t"+"穦"+"\t"+"キА");
 	
@@ -56,7 +56,7 @@ public class array2D_3 {
 		System.out.println("\n"+"キА"+"\t"+avg[0]+"\t"+avg[1]+"\t"+avg[2]+"\t"+avg[3]+"\t"+avg[4]);
 		System.out.println("ぃの计"+"\t"+fail[0]+"\t"+fail[1]+"\t"+fail[2]+"\t"+fail[3]+"\t");
 		System.out.println("程蔼"+"\t"+a[0]+"\t"+a[1]+"\t"+a[2]+"\t"+a[3]+"\t"+a[4]);
-		System.out.println("程"+"\t"+b[0]+"\t"+b[1]+"\t"+b[2]+"\t"+b[3]+"\t"+b[4]);
+//		System.out.println("程"+"\t"+b[0]+"\t"+b[1]+"\t"+b[2]+"\t"+b[3]+"\t"+b[4]);
 	}
 }
 
