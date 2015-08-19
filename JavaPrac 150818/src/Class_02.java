@@ -26,7 +26,7 @@ public class Class_02 {
 			case 2:
 				System.out.print("請問需要的數量為?");
 				int numMb = scn.nextInt();
-				wb.setNum(numMb);
+				mb.setNum(numMb);
 				mbn++;
 				break;
 			default:
@@ -46,11 +46,16 @@ public class Class_02 {
 		System.out.println("電話:04-23323456 #6101");
 		System.out.println("傳真:04-23233876");
 		System.out.println("==============================================");
-		System.out.println("品項名稱		單價	數量		小計");
+		System.out.println("品項名稱		  單價	  數量		小計");
 		System.out.println("----------------------------------------------");
 		if(wbn == 1){
-			System.out.println("女人救世劍		878,787	"+wb.getNum()+"		"+wb.compute(878787,wb.getNum()));
+			System.out.println("女人救世劍		878,787	  "+wb.getNum()+"		"+wb.compute(878787,wb.getNum()));
 		}
+		if(mbn == 1){
+			System.out.println("男人野蠻劍		787,878	  "+mb.getNum()+"		"+mb.compute(787878,mb.getNum()));
+		}
+		System.out.println("==============================================");
+		System.out.println("合計:"+ (wb.compute(878787,wb.getNum())+mb.compute(787878,mb.getNum())));
 	}
 }
 class Weapon{
@@ -70,6 +75,7 @@ class Weapon{
 	public float compute(float v1 , float v2){
 		float result = v1 * v2;
 		return result;
+		
 		
 		
 	}
