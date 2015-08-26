@@ -27,7 +27,7 @@ public class Frame extends JFrame{
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		cp.setLayout(new BorderLayout(5,5));
 		jtf.setBackground(Color.black);
-		jtf.setHorizontalAlignment(JTextField.LEFT);
+		jtf.setHorizontalAlignment(JTextField.CENTER);
 		jtf.setFont(new Font("Times New Roman",Font.BOLD,20));
 		jtf.setEnabled(false);
 		cp.add(jtf,BorderLayout.NORTH);
@@ -38,7 +38,7 @@ public class Frame extends JFrame{
 		for(int i=0;i<9;i++){
 			jbtns[i]=new JButton(""+data[i]);
 			jbtns[i].setOpaque(true);
-//			jbtns[i].setBackground(Color.pink);
+			jbtns[i].setBackground(Color.pink);
 			jbtns[i].setHorizontalAlignment(JButton.CENTER);
 			jbtns[i].setFont(new Font("Times New Roman",Font.BOLD,25));
 			jbtns[i].setForeground(Color.black);
@@ -50,11 +50,17 @@ public class Frame extends JFrame{
 						jbtn.setBackground(Color.pink);
 						jbtn.setEnabled(false);
 					}else{
-						if(count != Integer.parseInt(jtf.getText())){
+						if(count != Integer.parseInt(jbtn.getText())){
 							popFrame("遊戲失敗");
 						}
 						
 					}
+					
+//					 if ((jbtn.getKeyCode() == KeyEvent.VK_ENTER)&&( jbtn.getID() == KeyEvent.KEY_PRESSED)  
+//                             ) {  
+//						 
+//                     }
+					
 					if(count>9){
 						timer.stop();
 						popFrame(n+"秒");
@@ -75,13 +81,32 @@ public class Frame extends JFrame{
 		});
 		
 	}
+	private void reset(){		//重製
+		count=1;
+		data = rndNum();
+		for(int i=0;i<9;i++){
+			jbtns[i].setText(""+data[i]);
+			jbtns[i].setOpaque(true);
+			jbtns[i].setBackground(Color.pink);
+			jbtns[i].setForeground(Color.black);
+			jbtns[i].setEnabled(true);
+		}
+		jtf.setText("Time");
+		n=0;
+		repaint();
+		
+		//timer.stop();
+		//Stop Timer
+	}
 	private void popFrame(String message){
+		timer.stop();
 		JOptionPane.showMessageDialog(null,message);
 		int n = JOptionPane.showConfirmDialog(null,
-				"您是否繼續?","問題", JOptionPane.YES_NO_OPTION);
+				"您是否繼續?","問題", JOptionPane.YES_OPTION,JOptionPane.NO_OPTION,null);
+			
 		if(n == JOptionPane.YES_OPTION){
 			for(int i=0;i<9;i++){
-				jbtns[i].setBackground(Color.black);
+				reset();
 			}//初始化遊戲並繼續進行
 		}else{
 			System.exit(0);	//結束遊戲
