@@ -7,18 +7,18 @@ import java.util.Random;
 import javax.swing.Timer.*;
 
 public class Frame extends JFrame {
-	private JButton jbtnStart = new JButton("Start");
+	private JButton jbtnStart = new JButton();
 	private JMenuBar menuBar = new JMenuBar();
 	private JMenu menu = new JMenu("設定按鈕顏色");
 	private JMenu menuExit = new JMenu("Exit");
-	private JMenuItem item1 = new JMenuItem("Blue");
-	private JMenuItem item2 = new JMenuItem("Pink");
-	private JMenuItem item3 = new JMenuItem("Yellow");
-	private JMenuItem item4 = new JMenuItem("Red");
-	private JMenuItem item5 = new JMenuItem("Green");
+	private JMenuItem item1 = new JMenuItem("藍藍der");
+	private JMenuItem item2 = new JMenuItem("粉粉der");
+	private JMenuItem item3 = new JMenuItem("黃黃der");
+	private JMenuItem item4 = new JMenuItem("紅紅der");
+	private JMenuItem item5 = new JMenuItem("綠綠der");
 	private JMenuItem itemExit = new JMenuItem("結束遊戲");
 	private Container cp;
-	private JTextField jtf = new JTextField("Time");
+	private JTextField jtf = new JTextField("時間");
 	private JTextArea jta = new JTextArea();
 	private JPanel jpnl1 = new JPanel();
 	private MyButton jbtns[] = new MyButton[9];
@@ -29,7 +29,7 @@ public class Frame extends JFrame {
 
 	Timer timer = new Timer(1000, new ActionListener() {
 		public void actionPerformed(ActionEvent ae) {
-			jtf.setText("Time:" + (++n));
+			jtf.setText("時間:  " + (++n) + " 秒");
 		}
 	});
 	private int count = 1;
@@ -56,17 +56,16 @@ public class Frame extends JFrame {
 		cp.setLayout(new BorderLayout(5, 5));
 		
 		jtf.setForeground(Color.RED);
-		jtf.setBackground(Color.gray);
+		jtf.setBackground(Color.WHITE);
 		jtf.setHorizontalAlignment(JTextField.CENTER);
-		jtf.setFont(new Font("微軟正黑體", Font.BOLD, 20));
+		jtf.setFont(new Font("微軟正黑體", Font.BOLD, 45));
 		jtf.setEnabled(false);
 		cp.add(jtf, BorderLayout.NORTH);
 		
 		jta.setBackground(Color.white);
 		jta.setForeground(Color.BLACK);
-//		jta.setHorizontalAlignment(JTextArea.CENTER);
-		jta.setText("****數字記憶大考驗****\n遊戲玩法:\n\n請先記下右側數字順序\n再由1到9依序翻出。\n\n\n簡單吧!(･ω´･ )\n但是只要錯了就結束囉~\n那趕快開始吧!");
-		jta.setFont(new Font("微軟正黑體", Font.BOLD, 20));
+		jta.setText("\n****數字記憶大考驗****\n\n遊戲玩法:\n\n請先記下右側數字順序\n再由1到9依序翻出。\n\n\n\n簡單吧!(･ω´･ )\n但是只要錯了就結束囉~\n那趕快開始吧!");
+		jta.setFont(new Font("微軟正黑體", Font.BOLD, 25));
 		jta.setEnabled(false);
 		cp.add(jta, BorderLayout.WEST);
 
@@ -104,7 +103,7 @@ public class Frame extends JFrame {
 			});
 		}
 
-		jpnl1.setLayout(new GridLayout(3, 3, 3, 3));
+		jpnl1.setLayout(new GridLayout(3, 3, 10, 10));
 		cp.add(jpnl1, BorderLayout.CENTER);
 		
 		itemExit.addActionListener(new ActionListener(){
@@ -134,7 +133,7 @@ public class Frame extends JFrame {
 							jbtn.setEnabled(false);
 						} else {
 							if (count != Integer.parseInt(jbtn.getText())) {
-								popFrame("遊戲失敗");
+								popFrame("輸啦~~!!G G!!");
 							}
 						}
 
@@ -149,7 +148,9 @@ public class Frame extends JFrame {
 			jpnl1.add(jbtns[i]);
 		}
 		
-		jbtnStart.setBounds(50, 100, 0, 0);
+		jbtnStart.setBounds(100, 200, 10, 10);
+		jbtnStart.setText("~ 遊戲開始 ~");
+		jbtnStart.setFont(new Font("微軟正黑體", Font.BOLD, 20));
 		cp.add(jbtnStart, BorderLayout.SOUTH);
 		jbtnStart.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent a) {
@@ -198,7 +199,7 @@ public class Frame extends JFrame {
 			jbtns[i].setForeground(Color.black);
 			jbtns[i].setEnabled(true);
 		}
-		jtf.setText("Time");
+		jtf.setText("時間");
 		n = 0;
 		repaint();
 	}
@@ -206,7 +207,7 @@ public class Frame extends JFrame {
 	private void popFrame(String message) {
 		timer.stop();
 		JOptionPane.showMessageDialog(null, message);
-		int n = JOptionPane.showConfirmDialog(null, "您是否重新遊戲?", "問題", JOptionPane.YES_OPTION, JOptionPane.NO_OPTION,
+		int n = JOptionPane.showConfirmDialog(null, "(ﾟ▽ﾟ)是否要重新遊戲?(ﾟ▽ﾟ)", "感謝遊玩~", JOptionPane.YES_OPTION, JOptionPane.NO_OPTION,
 				null);
 
 		if (n == JOptionPane.YES_OPTION) {
@@ -252,19 +253,6 @@ public class Frame extends JFrame {
             super(text);
             super.setContentAreaFilled(false);
         }
-
-     
-//        protected void paintComponent(Graphics g) {
-//            if (getModel().isPressed()) {
-//                g.setColor(pressedBackgroundColor);
-//            } else if (getModel().isRollover()) {
-//                g.setColor(hoverBackgroundColor);
-//            } else {
-//                g.setColor(getBackground());
-//            }
-//            g.fillRect(0, 0, getWidth(), getHeight());
-//            super.paintComponent(g);
-//        }
 
       
         public void setContentAreaFilled(boolean b) {
