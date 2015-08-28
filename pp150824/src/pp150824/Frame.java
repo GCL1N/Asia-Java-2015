@@ -133,6 +133,7 @@ public class Frame extends JFrame {
 							jbtn.setEnabled(false);
 						} else {
 							if (count != Integer.parseInt(jbtn.getText())) {
+								jbtn.setBackground(color1);
 								popFrame("輸啦~~!!G G!!");
 							}
 						}
